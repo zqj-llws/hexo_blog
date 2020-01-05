@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+	<div id="live2d-widget">
+		<canvas id="live2dcanvas" width="200" height="400" style="position: fixed; opacity: 0.7; right: 0px; bottom: -20px; z-index: 99999; pointer-events: none;"></canvas>
+	</div>
+</body>
+<script src="L2Dwidget.min.js"></script>
+<script>
+	// L2Dwidget.init();
+	
+	  /**
+	   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+	   */
+	  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
+	    pluginRootPath = "/live2d_models/"; // 插件的路径，无需更改
+	  //特定的模型json文件名称
+	  var modelPathJson = {
+	    "epsilon2_1": "Epsilon2.1",
+	    "gf": "Gantzert_Felixander",
+	    "haru/01": "haru01",
+	    "haru/02": "haru02",
+	    "nietzsche": "nietzche"
+	  }
+
+	  
+	    var modelName = "hijiki";
+	  
+
+	  var modelJsonPath = "";
+	  if (modelPathJson[modelName]) {
+	    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
+	      ".model.json";
+	  } else {
+	    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
+	  }
+	  L2Dwidget.init({
+	    model: {
+	      jsonPath: modelJsonPath
+	    },
+	    display: {
+	       position: "right", 
+	       width: 200, 
+	       height: 400, 
+	       hOffset: 60, 
+	       vOffset: -60 
+	    },
+	    mobile: {
+	       show: false, 
+	       scale: 0.6 
+	    },
+	    react: {
+	       opacity: 0.7 
+	    }
+	  })
+
+</script>
+</html>

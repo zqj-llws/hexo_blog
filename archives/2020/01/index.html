@@ -39,6 +39,12 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
+  
+    <div id="live2d-widget">
+      <canvas id="live2dcanvas" width="200" height="400" style="position: fixed; opacity: 0.7; right: 0px; bottom: -20px; z-index: 99999; pointer-events: none;"></canvas>
+    </div>
+  
+  
   <div id="container">
     <div id="wrap">
       <header id="header">
@@ -156,6 +162,7 @@
     </div>
   </div>
 </footer>
+
     </div>
     <nav id="mobile-nav">
   
@@ -168,6 +175,14 @@
 
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
 <script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/blog/js/clickLove.js"></script>
+
+  <script src="/blog/js/girl/L2Dwidget.min.js"></script>
+  <script>
+    L2Dwidget.init();
+  </script>
+
+
 
 
   
