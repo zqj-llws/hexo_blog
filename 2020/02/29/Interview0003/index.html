@@ -5,17 +5,17 @@
   
 
   
-  <title>Interviews 0002 | 越努力，越幸运</title>
+  <title>Interviews 0003 | 越努力，越幸运</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="算法题 0002 算法结果如下1234&#x2F;&#x2F; 实现 typeOf 函数调用: typeOf([&#39;str&#39;, true, 0, undefined, null, [], &amp;#123;&amp;#125;, function() &amp;#123;&amp;#125;])  返回结果： &#x2F;&#x2F; [String, Boolean, Number,  Undefined, Null, Array, Object, Function">
+  <meta name="description" content="面试题 0003 算法结果如下1234&#x2F;&#x2F; 实现 typeOf 函数调用: typeOf([&#39;str&#39;, true, 0, undefined, null, [], &amp;#123;&amp;#125;, function() &amp;#123;&amp;#125;])  返回结果： &#x2F;&#x2F; [String, Boolean, Number,  Undefined, Null, Array, Object, Function">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Interviews 0002">
-<meta property="og:url" content="https://zhanqj.gitee.io/2020/01/05/Interview0002/index.html">
+<meta property="og:title" content="Interviews 0003">
+<meta property="og:url" content="https://zhanqj.gitee.io/2020/02/29/Interview0003/index.html">
 <meta property="og:site_name" content="越努力，越幸运">
-<meta property="og:description" content="算法题 0002 算法结果如下1234&#x2F;&#x2F; 实现 typeOf 函数调用: typeOf([&#39;str&#39;, true, 0, undefined, null, [], &amp;#123;&amp;#125;, function() &amp;#123;&amp;#125;])  返回结果： &#x2F;&#x2F; [String, Boolean, Number,  Undefined, Null, Array, Object, Function">
+<meta property="og:description" content="面试题 0003 算法结果如下1234&#x2F;&#x2F; 实现 typeOf 函数调用: typeOf([&#39;str&#39;, true, 0, undefined, null, [], &amp;#123;&amp;#125;, function() &amp;#123;&amp;#125;])  返回结果： &#x2F;&#x2F; [String, Boolean, Number,  Undefined, Null, Array, Object, Function">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-05T13:26:25.000Z">
-<meta property="article:modified_time" content="2020-02-29T14:36:18.165Z">
+<meta property="article:published_time" content="2020-02-29T14:02:16.899Z">
+<meta property="article:modified_time" content="2020-02-29T14:03:16.801Z">
 <meta property="article:author" content="Lenglu">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="前端">
@@ -80,10 +80,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Interview0002" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Interview0003" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/01/05/Interview0002/" class="article-date">
-  <time datetime="2020-01-05T13:26:25.000Z" itemprop="datePublished">2020-01-05</time>
+    <a href="/blog/2020/02/29/Interview0003/" class="article-date">
+  <time datetime="2020-02-29T14:02:16.899Z" itemprop="datePublished">2020-02-29</time>
 </a>
     
   </div>
@@ -94,7 +94,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Interviews 0002
+      Interviews 0003
     </h1>
   
 
@@ -102,7 +102,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>算法题 0002</p>
+        <p>面试题 0003</p>
 <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="结果如下"><a href="#结果如下" class="headerlink" title="结果如下"></a>结果如下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 实现 typeOf 函数</span><br><span class="line">调用: typeOf([<span class="string">'str'</span>, <span class="literal">true</span>, 0, undefined, null, [], &#123;&#125;, <span class="function"><span class="title">function</span></span>() &#123;&#125;])  </span><br><span class="line">返回结果： </span><br><span class="line">// [String, Boolean, Number,  Undefined, Null, Array, Object, Function]</span><br></pre></td></tr></table></figure>
 
 <h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">typeOf</span></span> () &#123;</span><br><span class="line">    var args = arguments[0]</span><br><span class="line">    var resArr = []</span><br><span class="line">    <span class="keyword">for</span> (var i = 0; i &lt; args.length; i++) &#123;</span><br><span class="line">        var typeStr = Object.prototype.toString.call(args[i]);</span><br><span class="line">        switch(typeStr) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"[object String]"</span> :</span><br><span class="line">                resArr.push(<span class="string">"String"</span>)</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"[object Boolean]"</span> :</span><br><span class="line">                resArr.push(<span class="string">"Boolean"</span>)</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"[object Number]"</span> :</span><br><span class="line">                resArr.push(<span class="string">"Number"</span>)</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"[object Undefined]"</span> :</span><br><span class="line">                resArr.push(<span class="string">"Undefined"</span>)</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"[object Null]"</span> :</span><br><span class="line">                resArr.push(<span class="string">"Null"</span>)</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"[object Array]"</span> :</span><br><span class="line">                resArr.push(<span class="string">"Array"</span>)</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"[object Object]"</span> :</span><br><span class="line">                resArr.push(<span class="string">"Object"</span>)</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"[object Function]"</span> :</span><br><span class="line">                resArr.push(<span class="string">"Function"</span>)</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> resArr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">typeOf([<span class="string">'str'</span>, <span class="literal">true</span>, 0, undefined, null, [], &#123;&#125;, <span class="function"><span class="title">function</span></span>() &#123;&#125;])</span><br></pre></td></tr></table></figure>
@@ -111,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhanqj.gitee.io/2020/01/05/Interview0002/" data-id="ck50tm0tk00021sttgxq4aiee" class="article-share-link">Share</a>
+      <a data-url="https://zhanqj.gitee.io/2020/02/29/Interview0003/" data-id="ck77od8z60001t4vc3xszd7it" class="article-share-link">Share</a>
       
       
     </footer>
@@ -120,19 +120,19 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2020/02/29/Interview0003/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2020/02/29/Interview0004/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Interviews 0003
+          Interviews 0004
         
       </div>
     </a>
   
   
-    <a href="/blog/2020/01/05/Interview0001/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2020/01/05/Interview0002/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Interviews 0001</div>
+      <div class="article-nav-title">Interviews 0002</div>
     </a>
   
 </nav>
