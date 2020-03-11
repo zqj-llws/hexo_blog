@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zhanqj.gitee.io">
-  <title>Interviews 0001 | 越努力，越幸运</title>
+  <title>服务器端URL重定向后获取referer(referrer) | 越努力，越幸运</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="算法题 0001 算法结果如下12345678910111213141516171819&#x2F;&#x2F; 实现函数fn&#x2F;*console.log(&quot;fn: &quot;, fn(    function (x) &amp;#123;        return x + 3    &amp;#125;,    function (x) &amp;#123;        return x &#x2F; 2    &amp;#125;,    function (">
+  <meta name="description" content="使用express框架时服务器端重定向后获取不到referer(referrer) 如果使用过这个参数，我们会发现有时候是referer，而有时候是referrer。究竟是怎么回事呢？这里的referer是一个历史遗留问题,http中里面有用来表示页面或者资源请求头，是在上世纪九十年代提出来的，但是当时将这个命名为referer，并写入http协议的里面，正确的写法实际上是referrer。由于在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Interviews 0001">
-<meta property="og:url" content="https://zhanqj.gitee.io/2020/01/05/Interview0001/index.html">
+<meta property="og:title" content="服务器端URL重定向后获取referer(referrer)">
+<meta property="og:url" content="https://zhanqj.gitee.io/2018/09/16/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AFURL%E9%87%8D%E5%AE%9A%E5%90%91%E5%90%8E%E8%8E%B7%E5%8F%96referer(referrer)/index.html">
 <meta property="og:site_name" content="越努力，越幸运">
-<meta property="og:description" content="算法题 0001 算法结果如下12345678910111213141516171819&#x2F;&#x2F; 实现函数fn&#x2F;*console.log(&quot;fn: &quot;, fn(    function (x) &amp;#123;        return x + 3    &amp;#125;,    function (x) &amp;#123;        return x &#x2F; 2    &amp;#125;,    function (">
+<meta property="og:description" content="使用express框架时服务器端重定向后获取不到referer(referrer) 如果使用过这个参数，我们会发现有时候是referer，而有时候是referrer。究竟是怎么回事呢？这里的referer是一个历史遗留问题,http中里面有用来表示页面或者资源请求头，是在上世纪九十年代提出来的，但是当时将这个命名为referer，并写入http协议的里面，正确的写法实际上是referrer。由于在">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-05T12:56:25.000Z">
-<meta property="article:modified_time" content="2020-03-11T12:25:20.962Z">
+<meta property="article:published_time" content="2018-09-16T12:58:05.000Z">
+<meta property="article:modified_time" content="2020-03-11T12:33:36.837Z">
 <meta property="article:author" content="Lenglu">
-<meta property="article:tag" content="面试题">
+<meta property="article:tag" content="Express">
+<meta property="article:tag" content="重定向">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="越努力，越幸运" type="application/atom+xml">
@@ -151,31 +152,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Interview0001" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-服务器端URL重定向后获取referer(referrer)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Interviews 0001
+      服务器端URL重定向后获取referer(referrer)
     </h1>
   
 
         
-        <a href="/2020/01/05/Interview0001/" class="archive-article-date">
-  	<time datetime="2020-01-05T12:56:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
+        <a href="/2018/09/16/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AFURL%E9%87%8D%E5%AE%9A%E5%90%91%E5%90%8E%E8%8E%B7%E5%8F%96referer(referrer)/" class="archive-article-date">
+  	<time datetime="2018-09-16T12:58:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>算法题 0001</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="结果如下"><a href="#结果如下" class="headerlink" title="结果如下"></a>结果如下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 实现函数fn</span><br><span class="line">/*</span><br><span class="line">console.log(<span class="string">"fn: "</span>, fn(</span><br><span class="line">    <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x + 3</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x / 2</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x * 3</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x - 2</span><br><span class="line">    &#125;,</span><br><span class="line">    ...</span><br><span class="line">))*/</span><br><span class="line">// fn函数返回一个方法b</span><br><span class="line">调用b(10), 返回结果： ( ( ( ( 10  - 2 ) * 3 ) / 2 ) + 3 )</span><br></pre></td></tr></table></figure>
+        <p>使用express框架时服务器端重定向后获取不到referer(referrer)</p>
+<p>如果使用过这个参数，我们会发现有时候是referer，而有时候是referrer。究竟是怎么回事呢？<br>这里的referer是一个历史遗留问题,http中里面有用来表示页面或者资源请求头，是在上世纪九十年代提出来的，但是当时将这个命名为referer，并写入http协议的里面，正确的写法实际上是referrer。由于在http协议中标准错误了，错误大家就讲错就错，浏览器和服务端使用这个错误的referer，但是意思都是一个样的。</p>
+<p>但是在JavaScript中呢，大家就比较统一，统一使用referrer，我们可以使用document.referrer来获取referrer来找到源地址。<br>在测试重定向时，先用NodeJs在后端进行referer获取：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/test'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> Url = req.originalUrl;</span><br><span class="line">    <span class="keyword">var</span> refe = req.headers[referer];</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="keyword">var</span> len = args.length;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> str = <span class="string">"( "</span> + num + <span class="string">" "</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = len; i &gt; <span class="number">-1</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(args[i]) === <span class="string">"[object Function]"</span>) &#123;</span><br><span class="line"><span class="comment">//                 console.log(args[i])</span></span><br><span class="line">                <span class="keyword">var</span> regExp =<span class="regexp">/function\s*\w*\(([\s\S]*?)\)/</span>;</span><br><span class="line">                <span class="keyword">if</span>(regExp.test(args[i].toString()))&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.$<span class="number">0</span>)</span><br><span class="line">                    <span class="keyword">var</span> a = <span class="built_in">RegExp</span>.$<span class="number">1</span></span><br><span class="line">                    <span class="built_in">console</span>.log(a);</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.$<span class="number">2</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">var</span> s = args[i].toString().split(<span class="string">"\n"</span>).slice(<span class="number">1</span>, <span class="number">2</span>)[<span class="number">0</span>].split(a)[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">if</span> (i === <span class="number">0</span>) &#123;</span><br><span class="line">                    str += s + <span class="string">" )"</span></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    str = <span class="string">"( "</span> + str + s + <span class="string">" )"</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = fn(</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x + <span class="number">3</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x / <span class="number">2</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x * <span class="number">3</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x - <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">)</span><br><span class="line"><span class="built_in">console</span>.log(b(<span class="number">10</span>))</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">console.log("fn: ", fn(</span></span><br><span class="line"><span class="comment">    function (x) &#123;</span></span><br><span class="line"><span class="comment">        return x + 3</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    function (x) &#123;</span></span><br><span class="line"><span class="comment">        return x / 2</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    function (x) &#123;</span></span><br><span class="line"><span class="comment">        return x * 3</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    function (x) &#123;</span></span><br><span class="line"><span class="comment">        return x - 2</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">))*/</span></span><br></pre></td></tr></table></figure>
+<p>req.originalUrl获取的是当前的url地址,没有问题。但是req.headers[referer]却没有结果，console.log出现的是undefined，将referer改为了referrer也是同样的结果。<br>点开express查看源码(/express/lib/request.js):</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">req.get = </span><br><span class="line">req.header = <span class="function"><span class="keyword">function</span> <span class="title">header</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!name) &#123;</span><br><span class="line">    	<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'name argument is required to req.get'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name !== <span class="string">'string'</span>) &#123;</span><br><span class="line">    	<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'name must be a string to req.get'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> lc = name.toLowerCase();</span><br><span class="line">    <span class="keyword">switch</span> (lc) &#123;</span><br><span class="line">    	<span class="keyword">case</span> <span class="string">'referer'</span>:</span><br><span class="line">        <span class="keyword">case</span>: <span class="string">'referrer'</span>:</span><br><span class="line">        	<span class="keyword">return</span> <span class="keyword">this</span>.headers.referrer</span><br><span class="line">            	|| <span class="keyword">this</span>.headers.referer;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">        	<span class="keyword">return</span> <span class="keyword">this</span>.headers[lc];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>显示其中有这个方法，而且能同时识别referer和referrer，但我们确是得到了undefined，那么我们就输出headers：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/test'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> Url = req.originalUrl;</span><br><span class="line">    <span class="keyword">var</span> refe = req.headers;</span><br><span class="line">    res.writeHeade(<span class="number">200</span>, &#123;</span><br><span class="line">    	<span class="string">"Content-Type"</span>: <span class="string">"text/html;charset=utf-8"</span></span><br><span class="line">    &#125;);</span><br><span class="line">    res.end(<span class="built_in">JSON</span>.stringify(refe));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>出现的结果是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"host"</span>:<span class="string">"localhost:3000"</span>,</span><br><span class="line">    <span class="string">"connection"</span>:<span class="string">"keep-alive"</span>,</span><br><span class="line">    <span class="string">"upgrade-insecure-requests"</span>:<span class="string">"1"</span>,</span><br><span class="line">    <span class="string">"user-agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103  Safari/537.36"</span>,</span><br><span class="line">    <span class="string">"accept"</span>:<span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"</span>,</span><br><span class="line">    <span class="string">"accept-encoding"</span>:<span class="string">"gzip, deflate, sdch"</span>,</span><br><span class="line">    <span class="string">"accept-language"</span>:<span class="string">"zh-CN,zh;q=0.8"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原因是重定向时没有这个参数。<br>再查查看，会发现。这个referer的支持是不统一的，referer这个参数是浏览器自动添加到header中的，并且通过浏览器自动传递下去，不管是几重定向，找到都是最终的源地址。<br>重新部署一个服务器，写两个网页，用a来进行重定向,我们得到的结果是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"host"</span>:<span class="string">"localhost:3000"</span>,</span><br><span class="line">    <span class="string">"connection"</span>:<span class="string">"keep-alive"</span>,</span><br><span class="line">    <span class="string">"upgrade-insecure-requests"</span>:<span class="string">"1"</span>,</span><br><span class="line">    <span class="string">"user-agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span>,</span><br><span class="line">    <span class="string">"accept"</span>:<span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"</span>,</span><br><span class="line">    <span class="string">"referer"</span>:<span class="string">"http://localhost/test/1.html"</span>,</span><br><span class="line">    <span class="string">"accept-encoding"</span>:<span class="string">"gzip, deflate, sdch"</span>,</span><br><span class="line">    <span class="string">"accept-language"</span>:<span class="string">"zh-CN,zh;q=0.8"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在便有了referer属性。<br>如果重定向时需要传递重定向之前的URL不要直接使用referer，可以这样实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/test'</span>, (req, res, next) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> _url = req.headers.referer || req.protocol + <span class="string">'://'</span> + req.get(<span class="string">'host'</span>);</span><br><span class="line">    res.redirect(<span class="string">'/redirect?returnUrl='</span> + <span class="built_in">escape</span>(_url));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">能获取到referer</th>
+<th align="left">不能获取到referer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">使用A标签来访问页面</td>
+<td align="left">使用js重定向 location.href 和 location.replace()</td>
+</tr>
+<tr>
+<td align="left">submit input提交的表单post和get</td>
+<td align="left">服务器端的redirect，PHP中的header(“location:”)</td>
+</tr>
+<tr>
+<td align="left">使用js提交的post和get表单</td>
+<td align="left">使用http重定向（我开始做的就是http重定向的项目，所以得不到referer参数）</td>
+</tr>
+</tbody></table>
+<p>测试referer可以打开Chrome，按F12,切换至Network选项卡，点击第一项请求，右侧选择Headers选项卡展开Request Headers对象查看有无’Referer’属性。</p>
+<p>参考文章：<a href="https://blog.csdn.net/qq_25107499/article/details/52123779" target="_blank" rel="noopener" title="URL重定向，referer，referrer和安全">URL重定向,referer，referrer和安全</a></p>
 
       
 
@@ -189,13 +227,28 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Express</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">重定向</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Http//" class="article-tag-list-link color5">Http</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -245,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://zhanqj.gitee.io/2020/01/05/Interview0001/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zhanqj.gitee.io/2018/09/16/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AFURL%E9%87%8D%E5%AE%9A%E5%90%91%E5%90%8E%E8%8E%B7%E5%8F%96referer(referrer)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -259,18 +312,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/05/Interview0002/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/18/Ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Interviews 0002
+          Ubuntu常用命令 - terminal
         
       </div>
     </a>
   
   
-    <a href="/2018/10/07/%E8%BD%AE%E6%92%AD%E5%9B%BE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">轮播图</div>
+    <a href="/2018/09/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -300,7 +353,7 @@
   
 
   
-  <div id="SOHUCS" sid="Interview0001" ></div> 
+  <div id="SOHUCS" sid="服务器端URL重定向后获取referer(referrer)" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

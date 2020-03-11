@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zhanqj.gitee.io">
-  <title>Interviews 0001 | 越努力，越幸运</title>
+  <title>Ubuntu常用命令 - terminal | 越努力，越幸运</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="算法题 0001 算法结果如下12345678910111213141516171819&#x2F;&#x2F; 实现函数fn&#x2F;*console.log(&quot;fn: &quot;, fn(    function (x) &amp;#123;        return x + 3    &amp;#125;,    function (x) &amp;#123;        return x &#x2F; 2    &amp;#125;,    function (">
+  <meta name="description" content="Ubuntu常用命令 - terminal进入系统根目录 1cd &#x2F;  进入home目录 1cd &#x2F;home  列出文件和目录 1ls 或者 1ll  新建文件（a） 1sudo touch a  查看文件（a） 1sudo cat a  编辑文件（a） 1sudo vim a 或者 1sudo vi a 根据提示按I键，当左下角出现INSERT时，移动光标到编辑位置进行编辑。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Interviews 0001">
-<meta property="og:url" content="https://zhanqj.gitee.io/2020/01/05/Interview0001/index.html">
+<meta property="og:title" content="Ubuntu常用命令 - terminal">
+<meta property="og:url" content="https://zhanqj.gitee.io/2018/09/18/Ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="越努力，越幸运">
-<meta property="og:description" content="算法题 0001 算法结果如下12345678910111213141516171819&#x2F;&#x2F; 实现函数fn&#x2F;*console.log(&quot;fn: &quot;, fn(    function (x) &amp;#123;        return x + 3    &amp;#125;,    function (x) &amp;#123;        return x &#x2F; 2    &amp;#125;,    function (">
+<meta property="og:description" content="Ubuntu常用命令 - terminal进入系统根目录 1cd &#x2F;  进入home目录 1cd &#x2F;home  列出文件和目录 1ls 或者 1ll  新建文件（a） 1sudo touch a  查看文件（a） 1sudo cat a  编辑文件（a） 1sudo vim a 或者 1sudo vi a 根据提示按I键，当左下角出现INSERT时，移动光标到编辑位置进行编辑。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-05T12:56:25.000Z">
-<meta property="article:modified_time" content="2020-03-11T12:25:20.962Z">
+<meta property="article:published_time" content="2018-09-18T14:32:11.000Z">
+<meta property="article:modified_time" content="2020-03-11T09:27:18.357Z">
 <meta property="article:author" content="Lenglu">
-<meta property="article:tag" content="面试题">
+<meta property="article:tag" content="cmd">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="越努力，越幸运" type="application/atom+xml">
@@ -151,31 +151,108 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Interview0001" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Ubuntu常用命令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Interviews 0001
+      Ubuntu常用命令 - terminal
     </h1>
   
 
         
-        <a href="/2020/01/05/Interview0001/" class="archive-article-date">
-  	<time datetime="2020-01-05T12:56:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
+        <a href="/2018/09/18/Ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2018-09-18T14:32:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>算法题 0001</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="结果如下"><a href="#结果如下" class="headerlink" title="结果如下"></a>结果如下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 实现函数fn</span><br><span class="line">/*</span><br><span class="line">console.log(<span class="string">"fn: "</span>, fn(</span><br><span class="line">    <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x + 3</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x / 2</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x * 3</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x - 2</span><br><span class="line">    &#125;,</span><br><span class="line">    ...</span><br><span class="line">))*/</span><br><span class="line">// fn函数返回一个方法b</span><br><span class="line">调用b(10), 返回结果： ( ( ( ( 10  - 2 ) * 3 ) / 2 ) + 3 )</span><br></pre></td></tr></table></figure>
+        <h5 id="Ubuntu常用命令-terminal"><a href="#Ubuntu常用命令-terminal" class="headerlink" title="Ubuntu常用命令 - terminal"></a>Ubuntu常用命令 - terminal</h5><p>进入系统根目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;</span><br></pre></td></tr></table></figure>
 
-<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="keyword">var</span> len = args.length;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> str = <span class="string">"( "</span> + num + <span class="string">" "</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = len; i &gt; <span class="number">-1</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(args[i]) === <span class="string">"[object Function]"</span>) &#123;</span><br><span class="line"><span class="comment">//                 console.log(args[i])</span></span><br><span class="line">                <span class="keyword">var</span> regExp =<span class="regexp">/function\s*\w*\(([\s\S]*?)\)/</span>;</span><br><span class="line">                <span class="keyword">if</span>(regExp.test(args[i].toString()))&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.$<span class="number">0</span>)</span><br><span class="line">                    <span class="keyword">var</span> a = <span class="built_in">RegExp</span>.$<span class="number">1</span></span><br><span class="line">                    <span class="built_in">console</span>.log(a);</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.$<span class="number">2</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">var</span> s = args[i].toString().split(<span class="string">"\n"</span>).slice(<span class="number">1</span>, <span class="number">2</span>)[<span class="number">0</span>].split(a)[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">if</span> (i === <span class="number">0</span>) &#123;</span><br><span class="line">                    str += s + <span class="string">" )"</span></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    str = <span class="string">"( "</span> + str + s + <span class="string">" )"</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = fn(</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x + <span class="number">3</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x / <span class="number">2</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x * <span class="number">3</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x - <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">)</span><br><span class="line"><span class="built_in">console</span>.log(b(<span class="number">10</span>))</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">console.log("fn: ", fn(</span></span><br><span class="line"><span class="comment">    function (x) &#123;</span></span><br><span class="line"><span class="comment">        return x + 3</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    function (x) &#123;</span></span><br><span class="line"><span class="comment">        return x / 2</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    function (x) &#123;</span></span><br><span class="line"><span class="comment">        return x * 3</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    function (x) &#123;</span></span><br><span class="line"><span class="comment">        return x - 2</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">))*/</span></span><br></pre></td></tr></table></figure>
+<p>进入home目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;home</span><br></pre></td></tr></table></figure>
 
+<p>列出文件和目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll</span><br></pre></td></tr></table></figure>
+
+<p>新建文件（a）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo touch a</span><br></pre></td></tr></table></figure>
+
+<p>查看文件（a）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat a</span><br></pre></td></tr></table></figure>
+
+<p>编辑文件（a）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim a</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi a</span><br></pre></td></tr></table></figure>
+<p>根据提示按I键，当左下角出现INSERT时，移动光标到编辑位置进行编辑。<br>编辑完成后，先按esc键，退出编辑环境：<br>放弃修改内容并退出：按键输入 :q 然后按enter键；<br>保存修改内容并退出：按键输入 :wq 然后按enter键。</p>
+<p>文件夹重命名（将文件夹a重命名为b）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv a b</span><br></pre></td></tr></table></figure>
+
+<p>移动文件夹（将文件夹a移动到文件夹b，并重名名为c）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv &#x2F;a &#x2F;b&#x2F;c</span><br></pre></td></tr></table></figure>
+
+<p>根据端口查进程pid</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i:端口号</span><br></pre></td></tr></table></figure>
+
+<p>杀进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kill PID号</span><br></pre></td></tr></table></figure>
+
+<p>关机（立即关机）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown 0</span><br></pre></td></tr></table></figure>
+
+<p>关机（10分钟后）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown +10</span><br></pre></td></tr></table></figure>
+
+<p>重启（立即重启）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown -r now</span><br></pre></td></tr></table></figure>
+
+<p>定时重启（10分钟后）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown -r +10</span><br></pre></td></tr></table></figure>
+
+<p>定时重启（在20:29重启）[任务放到后台，用户可以继续操作终端]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown -r 20:29 [&amp;]</span><br></pre></td></tr></table></figure>
+
+<p>apt 高级软件包管理工具</p>
+<p>更新所有软件包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<p>apt-get 常用命令</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">apt-get install node</td>
+<td align="center">下载并安装node</td>
+</tr>
+<tr>
+<td align="left">apt-get upgrade</td>
+<td align="center">下载并安装本系统上已有的软件包的最新版本</td>
+</tr>
+<tr>
+<td align="left">apt-get remove node</td>
+<td align="center">卸载特定的软件包（node）</td>
+</tr>
+<tr>
+<td align="left">apt-get source</td>
+<td align="center">下载特定软件包的源代码</td>
+</tr>
+<tr>
+<td align="left">apt-get clean</td>
+<td align="center">删除所有的已下载的包文件</td>
+</tr>
+</tbody></table>
 
       
 
@@ -189,13 +266,24 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">cmd</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Ubuntu//" class="article-tag-list-link color2">Ubuntu</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -245,7 +333,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://zhanqj.gitee.io/2020/01/05/Interview0001/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zhanqj.gitee.io/2018/09/18/Ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -259,18 +347,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/05/Interview0002/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/21/Nginx%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Interviews 0002
+          Nginx常用命令（Ubuntu环境）
         
       </div>
     </a>
   
   
-    <a href="/2018/10/07/%E8%BD%AE%E6%92%AD%E5%9B%BE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">轮播图</div>
+    <a href="/2018/09/16/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AFURL%E9%87%8D%E5%AE%9A%E5%90%91%E5%90%8E%E8%8E%B7%E5%8F%96referer(referrer)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">服务器端URL重定向后获取referer(referrer)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -300,7 +388,7 @@
   
 
   
-  <div id="SOHUCS" sid="Interview0001" ></div> 
+  <div id="SOHUCS" sid="Ubuntu常用命令" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
